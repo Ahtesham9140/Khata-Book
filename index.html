@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>खाता बुक</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar for persons list -->
+    <div class="sidebar">
+      <h2>Ateek Khata-Book</h2>
+      <!-- Search Field for Person -->
+      <input type="text" id="personSearch" placeholder="Search Person">
+      <form id="addPersonForm">
+        <input type="text" id="personName" placeholder="Person का नाम" required>
+        <button type="submit">Add Person</button>
+      </form>
+      <ul id="personList">
+        <!-- Person list items will appear here -->
+      </ul>
+    </div>
+
+    <!-- Main content for ledger details -->
+    <div class="main">
+      <h2 id="personTitle">Select a Person</h2>
+      <div id="summary">
+        <p>Total Credit: <span id="totalCredit">0</span></p>
+        <p>Total Debit: <span id="totalDebit">0</span></p>
+        <p>Net Balance: <span id="netBalance">0</span></p>
+      </div>
+      <div id="ledger">
+        <!-- Ledger entries will be shown here -->
+      </div>
+      <form id="addEntryForm" style="display: none;">
+        <select id="transactionType" required>
+          <option value="Deposit">Buy Item</option>
+          <option value="withdraw">Pay</option>
+        </select>
+        <input type="text" id="itemName" placeholder="Item Name" required>
+        <input type="number" id="payment" placeholder="Amount" required>
+        <button type="submit">Add Entry</button>
+      </form>
+      <button id="deletePersonBtn" style="display: none;">Delete Person</button>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
